@@ -6,9 +6,10 @@ import 'package:meals_app/screens/category_meals_screen.dart';
 class CategoryItem extends StatelessWidget {
   Color colour;
   String title;
-  CategoryItem({required this.title,required this.colour});
+  String id;
+  CategoryItem({required this.title,required this.colour,required this.id});
   void selectCategory(BuildContext ctx){
-    Navigator.of(ctx).push(MaterialPageRoute(builder: (_)=>CategoryMealsScreen()),);
+    Navigator.of(ctx).pushNamed('/category-meals',arguments: {'id':id,'title':title});
   }
   @override
   Widget build(BuildContext context) {
@@ -22,12 +23,13 @@ class CategoryItem extends StatelessWidget {
           child: Text(title,style: TextStyle(
             fontFamily: 'Montserrat',
            fontSize: 22,
+           color: Colors.white,
            // fontWeight: FontWeight.bold
           ),),
         ),
         decoration: BoxDecoration(
           color: colour,
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(16.0),
         ),
       ),
     );
