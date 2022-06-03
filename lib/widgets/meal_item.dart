@@ -22,6 +22,14 @@ class MealItem extends StatelessWidget {
       default:return 'Unknown';
     }
   }
+  String get affordabilityText{
+    switch(affordability){
+      case Affordability.Affordable:return 'Affordable';break;
+      case Affordability.Pricey:return 'Costly';break;
+      case Affordability.Luxurious:return 'Luxurious';break;
+      default:return 'Unknown';
+    }
+  }
   void selectMeal() {}
   @override
   Widget build(BuildContext context) {
@@ -78,6 +86,13 @@ class MealItem extends StatelessWidget {
                       Icon(Icons.work_outline),
                       SizedBox(width: 6,),
                       Text(complexityText),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.attach_money),
+                      SizedBox(width: 6,),
+                      Text(affordabilityText),
                     ],
                   )
                 ],
