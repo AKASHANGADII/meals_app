@@ -9,16 +9,12 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white70,
-      appBar: AppBar(title: Text("Daily Meals"),centerTitle: true,),
-      body: GridView(
+    return GridView(
         padding: EdgeInsets.all(14),
           children: DUMMY_CATEGORIES.map((e) => CategoryItem(colour: e.colour,title: e.title,id: e.id,)).toList(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             childAspectRatio: 3/2,
               crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
-        ),
-    );
+        );
   }
 }

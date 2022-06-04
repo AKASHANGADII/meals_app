@@ -33,11 +33,7 @@ class MealDetailScreen extends StatelessWidget {
         child: child,
       );
     }
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(mealDetail.title),
-      ),
-      body: SingleChildScrollView(
+    return SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -77,7 +73,6 @@ class MealDetailScreen extends StatelessWidget {
             ),),
           ],
         ),
-      ),
-    );
+      );
   }
 }

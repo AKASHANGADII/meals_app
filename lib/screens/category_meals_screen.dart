@@ -13,11 +13,7 @@ class CategoryMealsScreen extends StatelessWidget {
     final categoryMeals = DUMMY_MEALS
         .where((meal) => meal.categories.contains(categoryId))
         .toList();
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("$categoryTitle"),
-      ),
-      body: ListView.builder(
+    return ListView.builder(
           itemCount: categoryMeals.length,
           itemBuilder: (ctx, index) {
             return MealItem(
@@ -28,7 +24,6 @@ class CategoryMealsScreen extends StatelessWidget {
               affordability: categoryMeals[index].affordability,
               id: categoryMeals[index].id,
             );
-          }),
-    );
+          });
   }
 }
